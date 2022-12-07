@@ -1,0 +1,10 @@
+[Unit]
+Description=vector
+
+[Service]
+ExecStart=/vector-{{ vector_version }}/bin/vector --config /vector-{{ vector_version }}/config/vector.toml
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
